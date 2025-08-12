@@ -1,0 +1,73 @@
+
+Goal: Build a brand‑native screen (no placeholders) using Payoneer’s DS + repo assets.
+
+Source of truth (in this order):
+
+Payoneer DS tokens (colors, type, spacing, radii, elevation, interactions)
+
+Payoneer repo assets (SVGs, fonts) — by exact path + commit SHA
+
+If missing: recreate from DS or pull public micro‑assets only for tiny glyphs (caret/badge), matching DS visually.
+
+Process (must follow in order):
+
+Bottom nav first – Use approved SVG from repo. Confirm active tab.
+
+Plan the screen – IA, component list, and content map (bulleted).
+
+Asset hunt – For each component, list exact repo filenames you’ll use. If name is unclear, open each SVG in the folder; do not guess.
+
+Zero‑placeholder check – If any asset/text isn’t final, stop and ask.
+
+DS apply – Wire tokens:
+
+Colors: primary #FF4800, gradient ring #ff4700→#eaa300→#ccd90d→#66db4a→#1cd293→#069fdf→#6574e7→#dd53c5→#ef4c5b
+
+Semantic: success #1CD293, warning #EAA300, error #EF4C5B, info #069FDF
+
+Neutrals: background/surface #FFF, border #E0E0E0, text #252526, secondary #6F6F70, disabled #B6B6B6
+
+Type: Avenir Next World (Demi for headings, Regular for body)
+
+Spacing scale: 4/8/12/16/24/32 (stick to it)
+
+Radii & elevation: soft corners (10–16px), subtle shadows
+
+Interactions – Use your micro‑interaction rules:
+
+transition: all .2s cubic-bezier(.2,0,0,1)
+
+Hover lift translateY(-2px), Active scale(.98), Focus outline
+
+Shadow progression: normal→hover→active as specified
+
+Implement – Build responsive (mobile‑first), no layout shifts, safe‑area padding.
+
+Audit – Checklist below. Fix deltas before shipping.
+
+Deliverable: Single standalone HTML (CodePen‑ready), referencing repo assets by commit SHA. No external libs unless approved.
+
+Stop rules:
+
+If I can’t find an asset by name, stop and ask.
+
+If DS and screenshot conflict, ask which wins.
+
+If mobile QA shows layout drift, pause and fix responsiveness before continuing.
+
+Audit checklist (before you ever see it):
+
+ All colors match DS tokens (no off‑grays).
+
+ All icons are from repo (or approved micro‑assets).
+
+ Typography weights/sizes correct; no fake bold.
+
+ Spacing on the 4/8/12/16 grid; dividers #E0E0E0.
+
+ Interactions behave per spec (hover/active/focus).
+
+ Responsive: 320–430px widths, safe area respected.
+
+ No placeholders, no guessed assets, no broken links.
+
