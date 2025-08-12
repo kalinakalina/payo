@@ -45,7 +45,6 @@ Implement – Build responsive (mobile‑first), no layout shifts, safe‑area p
 
 Audit – Checklist below. Fix deltas before shipping.
 
-Deliverable: Single standalone HTML (CodePen‑ready), referencing repo assets by commit SHA. No external libs unless approved.
 
 Stop rules:
 
